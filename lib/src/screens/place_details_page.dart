@@ -182,13 +182,13 @@ class _PlaceFormPageState extends State<PlaceFormPage> {
                     );
                     if (widget.place == null) {
                       // Agregar un nuevo objeto en Firebase Realtime Database
-                      addPlace(place).then((_) {
-                        Navigator.pop(context);
+                      addPlace(place).then((newPlace) {
+                        Navigator.pop(context,newPlace);
                       });
                     } else {
                       // Actualizar un objeto existente en Firebase Realtime Database
                       updatePlace(place).then((_) {
-                        Navigator.pop(context);
+                        Navigator.pop(context,place);
                       });
                     }
                   }

@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -7,6 +8,7 @@ import 'sample_feature/sample_item_list_view.dart';
 import 'screens/places_page.dart';
 import 'settings/settings_controller.dart';
 import 'settings/settings_view.dart';
+import 'utils/constants.dart';
 
 /// The Widget that configures your application.
 class MyApp extends StatelessWidget {
@@ -19,6 +21,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    
     // Glue the SettingsController to the MaterialApp.
     //
     // The AnimatedBuilder Widget listens to the SettingsController for changes.
@@ -26,6 +30,8 @@ class MyApp extends StatelessWidget {
     return AnimatedBuilder(
       animation: settingsController,
       builder: (BuildContext context, Widget? child) {
+
+      
         return MaterialApp(
           // Providing a restorationScopeId allows the Navigator built by the
           // MaterialApp to restore the navigation stack when a user leaves and
@@ -57,7 +63,7 @@ class MyApp extends StatelessWidget {
           // Define a light and dark color theme. Then, read the user's
           // preferred ThemeMode (light, dark, or system default) from the
           // SettingsController to display the correct theme.
-          theme: ThemeData(),
+          theme: ThemeData(primaryColor: COLOR_WHITE, colorScheme: ColorScheme.fromSwatch(accentColor: COLOR_DARK_BLUE), textTheme:  TEXT_THEME_DEFAULT, fontFamily: "Montserrat"),
           darkTheme: ThemeData.dark(),
           themeMode: settingsController.themeMode,
 
