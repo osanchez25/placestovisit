@@ -14,5 +14,4 @@ jobs:
       - uses: bluefireteam/flutter-gh-pages@v7
         with:
           baseHref: /placestovisit/
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Token de acceso a GitHub (generado automáticamente)
-          publish_dir: ./build/web
+          working_dir: ./build/web
