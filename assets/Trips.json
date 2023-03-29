@@ -1,0 +1,100 @@
+{  
+    "places": {
+      "place1": {
+        "id": 1,
+        "name": "Statue of Liberty",
+        "image_url": "url",
+        "description": "A famous landmark in New York City",
+        "latitude": 40.6892,
+        "longitude": -74.0445,
+        "address": "New York, NY 10004",
+        "rating": 4.5,
+        "category": "Landmark",
+        "trip_id": 1
+      },
+      "place2": {
+        "id": 2,
+        "name": "Eiffel Tower",
+        "image_url": "url",
+        "description": "A wrought iron lattice tower on the Champ de Mars in Paris, France",
+        "latitude": 48.8584,
+        "longitude": 2.2945,
+        "address": "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France",
+        "rating": 4.7,
+        "category": "Landmark",
+        "trip_id": 2
+      },
+      "place3": {
+        "id": 3,
+        "name": "Great Barrier Reef",
+        "image_url": "url",
+        "description": "The world's largest coral reef system",
+        "latitude": -18.2871,
+        "longitude": 147.6992,
+        "address": "Queensland, Australia",
+        "rating": 4.8,
+        "category": "Natural Wonder",
+        "trip_id": 3
+      },
+      "place4": {
+        "id": 4,
+        "name": "Machu Picchu",
+        "image_url": "url",
+        "description": "An Incan citadel set high in the Andes Mountains",
+        "latitude": -13.1631,
+        "longitude": -72.545,
+        "address": "Machu Picchu, Peru",
+        "rating": 4.6,
+        "category": "Historical Landmark",
+        "trip_id": 4
+      },
+      "place5": {
+        "id": 5,
+        "name": "Golden Gate Bridge",
+        "image_url": "url",
+        "description": "A suspension bridge spanning the Golden Gate strait",
+        "latitude": 37.8199,
+        "longitude": -122.4783,
+        "address": "Golden Gate Bridge, San Francisco, CA",
+        "rating": 4.4,
+        "category": "Landmark",
+        "trip_id": 1
+      },
+      "place6": {
+        "id": 6,
+        "name": "Sistine Chapel",
+        "image_url": "url",
+        "description": "A chapel in the Apostolic Palace, the official residence of the Pope, in Vatican City",
+        "latitude": 41.9029,
+        "longitude": 12.4534,
+        "address": "Vatican City",
+        "rating": 4.8,
+        "category": "Historical Landmark",
+        "trip_id": 2
+      },
+      "place7": {
+        "id": 7,
+        "name": "Sydney Opera House",
+        "image_url": "url",
+        "description": "A performing arts center in Sydney, Australia",
+        "latitude": -33.8568,
+        "longitude": 151.2153,
+        "address": "Sydney Opera House, Bennelong Point, Sydney NSW 2000, Australia",
+        "rating": 4.6,
+        "category": "Landmark",
+        "trip_id": 3
+      },
+      "place8": {
+        "id": 8,
+        "name": "Taj Mahal",
+        "image_url": "url",
+        "description": "A pplace",
+        "latitude": -33.8568,
+        "longitude": 151.2153,
+        "address": "somewhere",
+        "rating": 3,
+        "category": "Landmark",
+        "trip_id": 5
+      }    
+  }
+}

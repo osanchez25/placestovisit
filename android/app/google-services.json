@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "102357646672",
+    "firebase_url": "https://placestovisit-d4bdf-default-rtdb.firebaseio.com",
+    "project_id": "placestovisit-d4bdf",
+    "storage_bucket": "placestovisit-d4bdf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:102357646672:android:846e3c188bed7ac5258055",
+        "android_client_info": {
+          "package_name": "com.example.placestovisit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "102357646672-9mi4ahqfcbu187kk1jh8jv53e3lro57h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYULsCXZ1_5j9gWfQYAft_GxPJWnOUF6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "102357646672-9mi4ahqfcbu187kk1jh8jv53e3lro57h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "102357646672-vth11bpmpmemersuknp499t1vmr4vtjb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.placestovisit"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
