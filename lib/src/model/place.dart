@@ -1,5 +1,5 @@
 class Place {
-  final String key;
+  String key;
   final String name;
   final String imageUrl;
   final String description;
