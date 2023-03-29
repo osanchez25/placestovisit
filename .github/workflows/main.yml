@@ -14,4 +14,4 @@ jobs:
       - uses: bluefireteam/flutter-gh-pages@v7
         with:
           baseHref: /placestovisit/
-          working_dir: ./build/web
+          workingDir: ./build/web
