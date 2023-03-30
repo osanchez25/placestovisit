@@ -19,6 +19,7 @@ class _PlaceFormPageState extends State<PlaceFormPage> {
   late String _category;
   late String _description;
   late String _imageUrl;
+  late String _imageKey;
   late double _rating;
   late String _address;
   late double _latitude;
@@ -31,7 +32,7 @@ class _PlaceFormPageState extends State<PlaceFormPage> {
       _name = widget.place!.name;
       _category = widget.place!.category;
       _description = widget.place!.description;
-      _imageUrl = widget.place!.imageUrl;
+      _imageKey = widget.place!.imageKey;
       _rating = widget.place!.rating;
       _address = widget.place!.address;
       _latitude = widget.place!.latitude;
@@ -40,7 +41,7 @@ class _PlaceFormPageState extends State<PlaceFormPage> {
       _name = '';
       _category = '';
       _description = '';
-      _imageUrl = '';
+      _imageKey = '';
       _rating = 0;
       _address = '';
       _latitude = 0;
@@ -100,8 +101,8 @@ class _PlaceFormPageState extends State<PlaceFormPage> {
                 },
               ),
               TextFormField(
-                initialValue: _imageUrl,
-                decoration: InputDecoration(labelText: 'Image URL'),
+                initialValue: _imageKey,
+                decoration: InputDecoration(labelText: 'Image Key'),
                 onChanged: (value) {
                   _imageUrl = value;
                 },
@@ -172,6 +173,7 @@ class _PlaceFormPageState extends State<PlaceFormPage> {
                       key: widget.place?.key ?? '',
                       name: _name,
                       imageUrl: _imageUrl,
+                      imageKey: _imageKey,
                       description: _description,
                       latitude: _latitude,
                       longitude: _longitude,

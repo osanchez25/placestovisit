@@ -17,6 +17,7 @@ void main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
+
     options: DefaultFirebaseOptions.currentPlatform,
   );
   // Run the app and pass in the SettingsController. The app listens to the

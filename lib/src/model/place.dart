@@ -1,7 +1,8 @@
 class Place {
   String key;
   final String name;
-  final String imageUrl;
+  late final String imageUrl;
+  final String imageKey;
   final String description;
   final double latitude;
   final double longitude;
@@ -14,6 +15,7 @@ class Place {
     required this.key,
     required this.name,
     required this.imageUrl,
+    required this.imageKey,
     required this.description,
     required this.latitude,
     required this.longitude,
@@ -28,6 +30,7 @@ class Place {
       key: key,
       name: json['name'],
       imageUrl: json['image_url'],
+      imageKey: json['image_key'],
       description: json['description'],
       latitude: json['latitude'].toDouble(),
       longitude: json['longitude'].toDouble(),
@@ -41,6 +44,7 @@ class Place {
   Map<String, dynamic> toJson() {
     return {
       'name': name,
+      'image_key': imageKey,
       'image_url': imageUrl,
       'description': description,
       'latitude': latitude,

@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+import 'package:cached_network_image/cached_network_image.dart';
 
 import '../custom/BorderIcon.dart';
 import '../helpers/place_api.dart';
@@ -90,7 +91,7 @@ class _PlacesListPageState extends State<PlacesListPage> {
               scrollDirection: Axis.horizontal,
               physics: const BouncingScrollPhysics(),
               child: Row(
-                children: ["Caminatas", "Restaurantes", "Cataratas", "Playa"]
+                children: ["Caminatas", "Restaurantes", "Cataratas", "Playa","Montana","Drone"]
                     .map((filter) => ChoiceOption(text: filter))
                     .toList(),
               ),
@@ -213,21 +214,28 @@ class PlaceListTile extends StatelessWidget {
               Stack(
                 children: [
                   ClipRRect(
-                      borderRadius: BorderRadius.circular(25.0),
-                      child: FutureBuilder<Uint8List?>(
-                          future: _loadImageFromFirebaseStorage(place.imageUrl),
-                          builder: (context, snapshot) {
-                            if (snapshot.connectionState ==
-                                ConnectionState.waiting) {
-                              return const CircularProgressIndicator();
-                            } else if (snapshot.hasError) {
-                              return const Icon(Icons.error);
-                            } else {
-                              return snapshot.data != null
-                                  ? Image.memory(snapshot.data!)
-                                  : const Icon(Icons.image);
-                            }
-                          })),
+                    borderRadius: BorderRadius.circular(25.0),
+                    child: FutureBuilder<String>(
+                      future: _getImageUrl(place.imageKey,place.imageUrl),
+                      builder: (BuildContext context,
+                          AsyncSnapshot<String> snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return CircularProgressIndicator();
+                        } else if (snapshot.hasError) {
+                          return Icon(Icons.error);
+                        } else {
+                          return CachedNetworkImage(
+                            imageUrl: snapshot.data!,
+                            placeholder: (context, url) =>
+                                CircularProgressIndicator(),
+                            errorWidget: (context, url, error) =>
+                                Icon(Icons.error),
+                          );
+                        }
+                      },
+                    ),
+                  ),
                   const Positioned(
                       top: 15,
                       right: 15,
@@ -292,15 +300,33 @@ class ChoiceOption extends StatelessWidget {
 }
 
 Future<Uint8List?> _loadImageFromFirebaseStorage(String imageKey) async {
-  try {
-    final ref = firebase_storage.FirebaseStorage.instance
-        .ref()
-        .child("Places_Pictures")
-        .child(imageKey);
-    final bytes = await ref.getData();
-    return bytes;
-  } catch (e) {
-    print('Error cargando la imagen: $e');
-    return null;
+  
+    try {
+      final ref = firebase_storage.FirebaseStorage.instance
+          .ref()
+          .child("Places_Pictures")
+          .child(imageKey);
+      final bytes = await ref.getData();
+      return bytes;
+    } catch (e) {
+      print('Error cargando la imagen: $e');
+      return null;
+    }
+  
+}
+
+Future<String> _getImageUrl(String imageKey,String imageUrl) async {
+  if(imageUrl == "" || imageUrl == imageKey){
+    try {
+      final ref = firebase_storage.FirebaseStorage.instance
+          .ref()
+          .child("Places_Pictures")
+          .child(imageKey);
+      return ref.getDownloadURL();
+    } catch (e) {
+      print('Error cargando obteniendo url: $e');
+      return "";
+    }
   }
+  return imageUrl;
 }
